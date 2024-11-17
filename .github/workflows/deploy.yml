@@ -27,7 +27,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install tailscale
       - name: Connect to the tailscale network
-        run: sudo tailscale up --authkey=${{ secrets.TAILSCALE }} --accept-routes
+        run: sudo tailscale up --authkey=${{ secrets.TAILSCALE }} --accept-routes --advertise-tags
 
       - name: Deploy project to the webserver
         uses: deployphp/action@v1
