@@ -1,0 +1,103 @@
+/* Algemeen */
+body {
+ 
+  font-family: 'Arial', sans-serif;
+  background-image: url('Christmas-Landscape-Background-65846538-1.png'); /* Voeg een sneeuwvlok achtergrond toe */
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Formulier */
+.form {
+  width: 50%;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+  font-size: 20px;
+  background-color: #ffffff; /* Witte achtergrond voor een schone uitstraling */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Zachte schaduw voor diepte */
+  background-image: url('snowflakes.png'); /* Voeg een sneeuwvlok achtergrond toe (optioneel) */
+  background-size: cover; /* Laat de sneeuwvlok afbeelden over de hele achtergrond */
+}
+
+/* Invoer velden */
+/* Dropdown select styling */
+.form-input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  border: 2px solid #c0392b; /* Kerst rood randkleur */
+  border-radius: 5px;
+  background-color: #ecf0f1; /* Lichte achtergrond voor de velden */
+}
+
+/* Groene rand wanneer de select wordt geopend (focus) */
+.form-input:focus {
+  outline: none; /* Verwijder de standaard focus outline */
+  border-color: #27ae60; /* Kerstgroen randkleur */
+  box-shadow: 0 0 5px #27ae60; /* Optioneel, subtiele schaduw voor extra nadruk */
+}
+
+/* Zorg ervoor dat de select ook dezelfde styling krijgt bij hover */
+.form-input:hover {
+  border-color: #27ae60; /* Kerstgroen bij hover */
+}
+
+
+/* Submit knop */
+.form-submit {
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+  background-color: #c0392b; /* Kerst Rood */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-submit:hover {
+  background-color: #e74c3c; /* Donkerder rood bij hover */
+}
+
+/* Algemene styling voor de terugknop */
+button {
+  background-color: #27ae60; /* Kerstgroen */
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #1e8449; /* Donkerder groen bij hover */
+}
+
+/* Extra styling voor kerstthema */
+h1, h2, h3 {
+  color: #c0392b; /* Kerst Rood voor kopjes */
+  font-family: 'Comic Sans MS', sans-serif; /* Feestelijke lettertype */
+}
+
+/* Algemene link styling */
+a {
+  color: #c0392b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+@media screen and (max-width: 992px) {
+  .form {
+      width: 90%;
+  }
+}
