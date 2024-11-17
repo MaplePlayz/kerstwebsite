@@ -1,0 +1,36 @@
+name: Deploy to webserver
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+        with:
+          php-version: "8.2"
+
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+      - name: Install Tailscale
+        run: |
+          curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.gpg | sudo apt-key add -
+          curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.list | sudo tee /etc/apt/sources.list.d/tailscale.list
+          sudo apt-get update
+          sudo apt-get install tailscale
+      - name: Connect to the tailscale network
+        run: sudo tailscale up --authkey ${{ secrets.TAILSCALE }}
+
+      - name: Deploy project to the webserver
+        uses: deployphp/action@v1
+        with:
+          dep: deploy
+          private-key: ${{ secrets.SSH_KEY }}
